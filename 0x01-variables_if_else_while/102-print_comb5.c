@@ -23,12 +23,16 @@ int main(void)
 
                 for (num2_ones = start_ones; num2_ones <= 9; num2_ones++)
                 {
+                    // Printing first two-digit number
                     putchar(num1_tens + '0');
                     putchar(num1_ones + '0');
                     putchar(' ');
+
+                    // Printing second two-digit number
                     putchar(num2_tens + '0');
                     putchar(num2_ones + '0');
 
+                    // Adding comma and space if not the last combination
                     if (!(num1_tens == 9 && num1_ones == 9 && num2_tens == 9 && num2_ones == 9))
                     {
                         putchar(',');
