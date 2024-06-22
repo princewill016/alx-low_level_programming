@@ -4,7 +4,8 @@
  * main - Entry point
  *
  * Description:
- * Prints the lowercase alphabet followed by the uppercase alphabet, then a newline.
+ * Prints the lowercase alphabet followed by the uppercase alphabet, 
+ * then a newline. 
  * Only putchar function is used, adhering to constraints.
  *
  * Return: Always 0 (Success)
@@ -12,6 +13,7 @@
 int main(void)
 {
 	char letter;
+
 	for (letter = 'a'; letter <= 'z'; letter++)
 	{
 		putchar(letter);
@@ -20,6 +22,6 @@ int main(void)
 	{
 		putchar(letter);
 	}
-	putchar('\n'); 
-	return 0;
+	putchar('\n');
+	return (0);
 }
