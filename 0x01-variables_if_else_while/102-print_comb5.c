@@ -20,6 +20,7 @@ int main(void)
 			for (num2_tens = num1_tens; num2_tens <= 9; num2_tens++)
 			{
 				int start_ones = (num2_tens == num1_tens) ? num1_ones + 1 : 0;
+
 				for (num2_ones = start_ones; num2_ones <= 9; num2_ones++)
 				{
 					putchar(num1_tens + '0');
