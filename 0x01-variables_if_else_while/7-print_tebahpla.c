@@ -10,13 +10,13 @@
  */
 int main(void)
 {
-    char letter;
+	char letter;
 
-    for (letter = 'z'; letter >= 'a'; letter--)
-    {
-        putchar(letter); /* Print the current letter */
-    }
-    putchar('\n'); /* Print a newline at the end */
+	for (letter = 'z'; letter >= 'a'; letter--)
+	{
+		putchar(letter); /* Print the current letter */
+	}
+		putchar('\n'); /* Print a newline at the end */
 
-    return (0);
+	return (0);
 }

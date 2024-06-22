@@ -10,20 +10,20 @@
  */
 int main(void)
 {
-    int num;
-    char letter;
+	int num;
+	char letter;
 
-    for (num = 0; num < 10; num++)
-    {
-        putchar(num + '0'); /* Print numbers 0-9 */
-    }
+	for (num = 0; num < 10; num++)
+	{
+		putchar(num + '0'); /* Print numbers 0-9 */
+	}
 
-    for (letter = 'a'; letter <= 'f'; letter++)
-    {
-        putchar(letter); /* Print letters a-f */
-    }
+	for (letter = 'a'; letter <= 'f'; letter++)
+	{
+		putchar(letter); /* Print letters a-f */
+	}
 
-    putchar('\n'); /* Print a newline at the end */
+	putchar('\n'); /* Print a newline at the end */
 
-    return (0);
+	return (0);
 }

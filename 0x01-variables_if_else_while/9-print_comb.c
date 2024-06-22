@@ -11,19 +11,19 @@
  */
 int main(void)
 {
-    int num;
+	int num;
 
-    for (num = 0; num <= 9; num++)
-    {
-        putchar(num + '0'); /* Print the current number */
+	for (num = 0; num <= 9; num++)
+	{
+		putchar(num + '0'); /* Print the current number */
         if (num < 9)
-        {
-            putchar(','); /* Print a comma */
-            putchar(' '); /* Print a space */
-        }
-    }
+	{
+		putchar(','); /* Print a comma */
+		putchar(' '); /* Print a space */
+	}
+	}
 
-    putchar('\n'); /* Print a newline at the end */
+	putchar('\n'); /* Print a newline at the end */
 
-    return (0);
+	return (0);
 }
