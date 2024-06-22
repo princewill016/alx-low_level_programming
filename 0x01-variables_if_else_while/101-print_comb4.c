@@ -22,8 +22,7 @@ int main(void)
 				putchar(hundreds_digit + '0'); /* Print hundreds digit */
 				putchar(tens_digit + '0');     /* Print tens digit */
 				putchar(ones_digit + '0');     /* Print ones digit */
-				/* Check if it's not the last combination */
-				
+				/* Check if it's not the last combination */		
 				if (!(hundreds_digit == 7 && tens_digit == 8 && ones_digit == 9))
 				{
 					putchar(','); /* Print a comma */
