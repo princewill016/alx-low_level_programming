@@ -19,8 +19,8 @@ int main(void)
 		{
 			putchar(tens_digit + '0'); /* Print tens digit */
 			putchar(ones_digit + '0'); /* Print ones digit */
-
-            /* Check if it's not the last combination */
+			
+			/* Check if it's not the last combination */
 			if (!(tens_digit == 8 && ones_digit == 9))
 			{
 				putchar(','); /* Print a comma */
@@ -28,7 +28,6 @@ int main(void)
 			}
 		}
 	}
-	
 	putchar('\n'); /* Print a newline at the end */
 
 	return (0);
