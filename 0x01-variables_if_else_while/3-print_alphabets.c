@@ -4,8 +4,8 @@
  * main - Entry point
  *
  * Description:
- * Prints the lowercase alphabet followed by the uppercase alphabet, 
- * then a newline. 
+ * Prints the lowercase alphabet followed by the uppercase alphabet,
+ * then a newline.
  * Only putchar function is used, adhering to constraints.
  *
  * Return: Always 0 (Success)
