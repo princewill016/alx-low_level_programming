@@ -11,37 +11,35 @@
  */
 int main(void)
 {
-    int tens1, ones1, tens2, ones2;
+    int num1_tens, num1_ones, num2_tens, num2_ones;
 
-    for (tens1 = 0; tens1 <= 9; tens1++)
+    for (num1_tens = 0; num1_tens <= 9; num1_tens++)
     {
-        for (ones1 = 0; ones1 <= 9; ones1++)
+        for (num1_ones = 0; num1_ones <= 9; num1_ones++)
         {
-            for (tens2 = tens1; tens2 <= 9; tens2++)
+            for (num2_tens = num1_tens; num2_tens <= 9; num2_tens++)
             {
-                /* Initialize ones2 based on the current tens2 */
-                ones2 = (tens1 == tens2) ? ones1 + 1 : 0;
+                int start_ones = (num2_tens == num1_tens) ? num1_ones + 1 : 0;
 
-                for (; ones2 <= 9; ones2++)
+                for (num2_ones = start_ones; num2_ones <= 9; num2_ones++)
                 {
-                    putchar(tens1 + '0');
-                    putchar(ones1 + '0');
+                    putchar(num1_tens + '0');
+                    putchar(num1_ones + '0');
                     putchar(' ');
-                    putchar(tens2 + '0');
-                    putchar(ones2 + '0');
+                    putchar(num2_tens + '0');
+                    putchar(num2_ones + '0');
 
-                    /* Check if it's not the last combination */
-                    if (!(tens1 == 9 && ones1 == 9 && tens2 == 9 && ones2 == 9))
+                    if (!(num1_tens == 9 && num1_ones == 9 && num2_tens == 9 && num2_ones == 9))
                     {
-                        putchar(','); /* Print a comma */
-                        putchar(' '); /* Print a space */
+                        putchar(',');
+                        putchar(' ');
                     }
                 }
             }
         }
     }
 
-    putchar('\n'); /* Print a newline at the end */
+    putchar('\n');
 
     return (0);
 }
