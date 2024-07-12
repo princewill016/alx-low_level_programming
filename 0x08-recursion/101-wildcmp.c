@@ -3,8 +3,7 @@
 /**
  * wildcmp - Compares two strings and checks if they can be considered identical
  * @s1: The first string to compare
- * @s2: The second string to compare, which can contain the special character *
- *
+ * @s2: The second string to compare, which can contain the special character
  * Return: 1 if the strings can be considered identical, 0 otherwise
  */
 int wildcmp(char *s1, char *s2)
