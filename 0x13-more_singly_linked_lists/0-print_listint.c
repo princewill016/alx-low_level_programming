@@ -1,5 +1,38 @@
 #include "lists.h"
-#include <stdio.h>
+
+/* Prototype for _putchar */
+int _putchar(char c);
+
+/* Helper function to print an integer */
+void print_number(int n)
+{
+    char buffer[10];
+    int i = 0;
+    int j;
+
+    if (n == 0)
+    {
+        _putchar('0');
+        return;
+    }
+
+    if (n < 0)
+    {
+        _putchar('-');
+        n = -n;
+    }
+
+    while (n > 0)
+    {
+        buffer[i++] = (n % 10) + '0';
+        n /= 10;
+    }
+
+    for (j = i - 1; j >= 0; j--)
+    {
+        _putchar(buffer[j]);
+    }
+}
 
 /**
  * print_listint - Prints all the elements of a listint_t list.
@@ -13,11 +46,12 @@ size_t print_listint(const listint_t *h)
 
     while (h)
     {
-        printf("%d\n", h->n);
+        print_number(h->n);
+        _putchar('\n');
         count++;
         h = h->next;
     }
 
-    return count;
+    return (count);
 }
 
