@@ -9,6 +9,13 @@ void print_number(int n)
     char buffer[10];
     int i = 0;
     int j;
+    int is_negative = 0;
+
+    if (n < 0)
+    {
+        is_negative = 1;
+        n = -n;
+    }
 
     if (n == 0)
     {
@@ -16,16 +23,15 @@ void print_number(int n)
         return;
     }
 
-    if (n < 0)
-    {
-        _putchar('-');
-        n = -n;
-    }
-
     while (n > 0)
     {
         buffer[i++] = (n % 10) + '0';
         n /= 10;
+    }
+
+    if (is_negative)
+    {
+        _putchar('-');
     }
 
     for (j = i - 1; j >= 0; j--)
