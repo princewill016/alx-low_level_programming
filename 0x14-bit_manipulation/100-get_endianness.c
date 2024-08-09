@@ -13,4 +13,3 @@ int get_endianness(void)
     /* If the first byte of x is 1, then the system is little endian */
     return (*c);
 }
-
