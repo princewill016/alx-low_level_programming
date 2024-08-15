@@ -1,53 +1,53 @@
-#include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints it to POSIX standard output
- * @filename: name of the file to be read
- * @letters: number of letters to read and print
- * 
- * Return: actual number of letters it could read and print,
- *         or 0 if it fails
+ * read_textfile - Reads a text file and prints it to the POSIX standard output.
+ * @filename: The name of the file to read.
+ * @letters: The number of letters to read and print.
+ *
+ * Return: The actual number of letters it could read and print, 0 if fails.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    int fd;
+    int fd; /* File descriptor */
     ssize_t bytes_read, bytes_written;
     char *buffer;
 
-    if (filename == NULL)
-        return (0);
+    if (filename == NULL) /* Check for NULL filename */
+        return 0;
 
-    buffer = malloc(letters);
-    if (buffer == NULL)
-        return (0);
+    fd = open(filename, O_RDONLY); /* Open file in read-only mode */
+    if (fd == -1) /* Check for open failure */
+        return 0;
 
-    fd = open(filename, O_RDONLY);
-    if (fd == -1)
+    buffer = malloc(sizeof(char) * BUF_SIZE); /* Allocate buffer */
+    if (buffer == NULL) /* Check for malloc failure */
     {
-        free(buffer);
-        return (0);
+        close(fd); /* Close file on allocation failure */
+        return 0;
     }
 
-    bytes_read = read(fd, buffer, letters);
-    if (bytes_read == -1)
+    bytes_read = 0;
+    while (letters > 0 && (bytes_read = read(fd, buffer, BUF_SIZE)) > 0)
     {
-        close(fd);
-        free(buffer);
-        return (0);
+        bytes_written = write(STDOUT_FILENO, buffer, bytes_read); /* Write to stdout */
+        if (bytes_written != bytes_read) /* Check for write failure */
+        {
+            free(buffer); /* Free buffer on write failure */
+            close(fd); /* Close file on write failure */
+            return 0;
+        }
+
+        letters -= bytes_read; /* Update remaining letters to read */
     }
 
-    bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
-    if (bytes_written != bytes_read)
-    {
-        close(fd);
-        free(buffer);
-        return (0);
-    }
+    free(buffer); /* Free buffer */
+    close(fd); /* Close file */
 
-    close(fd);
-    free(buffer);
-    return (bytes_written);
+    if (bytes_read == -1) /* Check for read error */
+        return 0;
+
+    return bytes_written; /* Return total bytes written */
 }
-
