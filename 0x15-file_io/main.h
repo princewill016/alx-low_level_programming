@@ -5,8 +5,9 @@
 #include <sys/types.h>
 
 /* Function prototypes */
-void print_elf_header_info(const Elf64_Ehdr *header);
-void print_error(const char *message, const char *file_name, int exit_code);
+ssize_t read_textfile(const char *filename, size_t letters);
+int create_file(const char *filename, char *text_content);
+int _putchar(char c);
 
 #endif /* MAIN_H */
 
