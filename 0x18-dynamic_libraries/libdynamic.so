@@ -1,0 +1,21 @@
+/* _putchar.c */
+int _putchar(char c)
+{
+    return (c);
+}
+
+/* _strlen.c */
+int _strlen(char *s)
+{
+    int len = 0;
+    while (s[len] != '\0')
+        len++;
+    return len;
+}
+
+/* _islower.c */
+int _islower(int c)
+{
+    return (c >= 'a' && c <= 'z');
+}
+
